@@ -5,8 +5,10 @@ aiosqlite==0.21.0
 annotated-types==0.7.0
 anyio==4.10.0
 attrs==25.3.0
-autogen-agentchat==0.7.2
-autogen-core==0.7.2
+aiofiles==24.1.0
+autogen-agentchat==0.7.4
+autogen-core==0.7.4
+autogen-ext==0.7.4
 banks==2.2.0
 beautifulsoup4==4.13.4
 certifi==2025.8.3
