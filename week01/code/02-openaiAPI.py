@@ -2,6 +2,7 @@ import os
 from openai import OpenAI
 from dotenv import load_dotenv
 
+# 默认环境变量优先级高，设置 override=True 后，会强制覆盖默认环境变量
 load_dotenv()
 api_key = os.getenv('OPENAI_API_KEY')
 base_url = os.getenv('OPENAI_API_BASE')

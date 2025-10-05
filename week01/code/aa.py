@@ -1,3 +1,5 @@
+# Langchain 模块
+
 # 1 模型 I/O 模块
 from langchain.llms import openai
 from langchain.chat_models import ChatOpenAI
@@ -48,4 +50,22 @@ tool = Tool(
 # 现代
 # Promise、Future 扁平化
 # Async Await  以同步风格写异步代码
+
+# ✅ 推荐：使用LCEL链式调用
+chain = (
+    prompt 
+    | model 
+    | parser
+)
+
+# ✅ 推荐：使用配置传递回调
+result = chain.invoke(
+    input_data,
+    config={"callbacks": [custom_callback]}
+)
+
+# ✅ 推荐：使用异步处理
+async def process():
+    return await chain.ainvoke(input_data)
+
 # 6 LCEL

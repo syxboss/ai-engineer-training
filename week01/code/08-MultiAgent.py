@@ -27,7 +27,7 @@ base_url = os.getenv('OPENAI_API_BASE')
 
 # 配置OPENAI COMPATIBLE客户端
 model_client = OpenAIChatCompletionClient(
-    model="openai/gpt-4o-mini",
+    model="gpt-4o-mini",
     api_key=api_key,
     base_url=base_url,
     model_info={
@@ -323,3 +323,141 @@ async def main():
 if __name__ == "__main__":
     # 使用 asyncio.run() 来运行异步主函数
     asyncio.run(main())
+
+
+
+console_result = """
+🏢 企业级多智能体协同系统 - 电商客服订单处理演示
+基于 AutoGen 框架实现
+================================================================================
+系统特性：
+✅ 1. 客服流程自动拆解
+✅ 2. 多数据源联动查询
+✅ 3. 跨部门智能协作
+✅ 4. 问题升级和路由
+✅ 5. AutoGen 框架支持
+
+============================================================
+🎯 场景1：订单状态查询
+============================================================
+客户问题：你好，我想查询一下我的订单ORD001的状态，什么时候能到货？
+
+🤖 AutoGen 多智能体协作处理：
+--------------------------------------------------
+---------- TextMessage (user) ----------
+你好，我想查询一下我的订单ORD001的状态，什么时候能到货？
+---------- ToolCallRequestEvent (order_query_agent) ----------
+[FunctionCall(id='call_xrDnN5SNV6p2SrJQDjZM2VEE', arguments='{"order_id":"ORD001"}', name='get_order_info')]
+---------- ToolCallExecutionEvent (order_query_agent) ----------
+[FunctionExecutionResult(content='订单信息查询成功：\n{\n  "order_id": "ORD001",\n  "customer_id": "CUST001",\n  "status": "已发货",\n  "items": [\n    {\n      "product": "iPhone 15",\n      "quantity": 1,\n      "price": 7999\n    }\n  ],\n  "total": 7999,\n  "shipping_address": "北京市朝阳区xxx街道",\n  "tracking_number": "SF1234567890",\n  "order_date": "2024-01-15",\n  "expected_delivery": "2024-01-18"\n}', name='get_order_info', call_id='call_xrDnN5SNV6p2SrJQDjZM2VEE', is_error=False)]
+---------- ModelClientStreamingChunkEvent (order_query_agent) ----------
+您的订单号为 **ORD001** 的详细信息如下：
+
+- **状态**: 已发货
+- **商品**: iPhone 15
+- **数量**: 1
+- **单价**: 7999 元
+- **总金额**: 7999 元
+- **发货地址**: 北京市朝阳区xxx街道
+- **物流追踪号码**: SF1234567890
+- **订单日期**: 2024-01-15
+- **预计到货时间**: 2024-01-18
+
+您的订单已经发货，预计将在2024年1月18日送达。如果您有任何其他疑问，欢迎随时询问！
+---------- TextMessage (user_agent) ----------
+谢谢您的帮助，问题已解决!
+
+✅ 场景处理完成
+
+============================================================
+🎯 场景2：缺货问题处理
+============================================================
+客户问题：我下单的MacBook Pro订单ORD002一直显示处理中，什么时候能发货？
+
+🤖 AutoGen 多智能体协作处理：
+--------------------------------------------------
+---------- TextMessage (user) ----------
+我下单的MacBook Pro订单ORD002一直显示处理中，什么时候能发货？
+---------- ToolCallRequestEvent (order_query_agent) ----------
+[FunctionCall(id='call_qttBD5RKbHbnwWTib8vnWDIa', arguments='{"order_id":"ORD002"}', name='get_order_info')]
+---------- ToolCallExecutionEvent (order_query_agent) ----------
+[FunctionExecutionResult(content='订单信息查询成功：\n{\n  "order_id": "ORD002",\n  "customer_id": "CUST002",\n  "status": "处理中",\n  "items": [\n    {\n      "product": "MacBook Pro",\n      "quantity": 1,\n      "price": 15999\n    }\n  ],\n  "total": 15999,\n  "shipping_address": "上海市浦东新区xxx路",\n  "tracking_number": null,\n  "order_date": "2024-01-16",\n  "expected_delivery": null\n}', name='get_order_info', call_id='call_qttBD5RKbHbnwWTib8vnWDIa', is_error=False)]
+---------- ModelClientStreamingChunkEvent (order_query_agent) ----------
+您的订单号为 **ORD002** 的详细信息如下：
+
+- **状态**: 处理中
+- **商品**: MacBook Pro
+- **数量**: 1
+- **单价**: 15999 元
+- **总金额**: 15999 元
+- **发货地址**: 上海市浦东新区xxx路
+- **物流追踪号码**: 暂无（订单尚未发货）
+- **订单日期**: 2024-01-16
+- **预计到货时间**: 暂无
+
+由于订单状态为“处理中”，“MacBook Pro”的发货时间尚未确定。这种情况可能是由于库存不足或其他原因导致的。我会将此情况通知物流和库存部门，以便获得更多信息和处理进度。如果您有其他问题或需要进一步的帮助，请告诉我！
+---------- ToolCallRequestEvent (logistics_agent) ----------
+[FunctionCall(id='call_ixxH1nuKijOEFtJFt8JwRLfA', arguments='{"tracking_number":"ORD002"}', name='get_logistics_info')]
+---------- ToolCallExecutionEvent (logistics_agent) ----------
+[FunctionExecutionResult(content='未找到运单号 ORD002 的物流信息。', name='get_logistics_info', call_id='call_ixxH1nuKijOEFtJFt8JwRLfA', is_error=False)]
+---------- ModelClientStreamingChunkEvent (logistics_agent) ----------
+您的订单号 **ORD002** 的状态依旧为“处理中”，并且目前尚未发货。由于订单未发货，因此也没有物流追踪信息。
+
+通常情况下，订单处理时间可能会因库存、付款确认或其他操作延迟而有所变化。我建议您定期查看订单状态，或者联系客户服务以获取最新的进展。若有其他问题或需要进一步的帮助，欢迎随时告知！
+---------- TextMessage (user_agent) ----------
+谢谢您的帮助，问题已解决!
+
+✅ 场景处理完成
+
+============================================================
+🎯 场景3：物流延误处理
+============================================================
+客户问题：我的订单ORD001已经超过预计到货时间了，但还没收到货，这是怎么回事？
+
+🤖 AutoGen 多智能体协作处理：
+--------------------------------------------------
+---------- TextMessage (user) ----------
+我的订单ORD001已经超过预计到货时间了，但还没收到货，这是怎么回事？
+---------- ToolCallRequestEvent (order_query_agent) ----------
+[FunctionCall(id='call_Nif8hnfOyZQtrObpoG8NjKFg', arguments='{"order_id":"ORD001"}', name='get_order_info')]
+---------- ToolCallExecutionEvent (order_query_agent) ----------
+[FunctionExecutionResult(content='订单信息查询成功：\n{\n  "order_id": "ORD001",\n  "customer_id": "CUST001",\n  "status": "已发货",\n  "items": [\n    {\n      "product": "iPhone 15",\n      "quantity": 1,\n      "price": 7999\n    }\n  ],\n  "total": 7999,\n  "shipping_address": "北京市朝阳区xxx街道",\n  "tracking_number": "SF1234567890",\n  "order_date": "2024-01-15",\n  "expected_delivery": "2024-01-18"\n}', name='get_order_info', call_id='call_Nif8hnfOyZQtrObpoG8NjKFg', is_error=False)]
+---------- ModelClientStreamingChunkEvent (order_query_agent) ----------
+您的订单号为 **ORD001** 的详细信息如下：
+
+- **状态**: 已发货
+- **商品**: iPhone 15
+- **数量**: 1
+- **单价**: 7999 元
+- **总金额**: 7999 元
+- **发货地址**: 北京市朝阳区xxx街道
+- **物流追踪号码**: SF1234567890
+- **订单日期**: 2024-01-15
+- **预计到货时间**: 2024-01-18
+
+现在订单状态仍显示为“已发货”，这表明订单已经出去，但您还未收到货物。请您通过物流追踪号码 **SF1234567890** 联系快递公司查询具体的运输状态。
+
+为了更加明确情况，我将把您的问题转达给物流部门，确保他们调查并跟进您的订单运送状况。如果您有其他问题，请告诉我！
+---------- ToolCallRequestEvent (logistics_agent) ----------
+[FunctionCall(id='call_4ez50en4gFII9boQy4sHZLa2', arguments='{"tracking_number":"SF1234567890"}', name='get_logistics_info')]
+---------- ToolCallExecutionEvent (logistics_agent) ----------
+[FunctionExecutionResult(content='物流信息查询成功：\n{\n  "status": "运输中",\n  "current_location": "北京分拣中心",\n  "estimated_arrival": "2024-01-18 14:00"\n}', name='get_logistics_info', call_id='call_4ez50en4gFII9boQy4sHZLa2', is_error=False)]
+---------- ModelClientStreamingChunkEvent (logistics_agent) ----------
+您的订单号 **ORD001** 目前的物流状态如下：
+
+- **状态**: 运输中
+- **当前位置**: 北京分拣中心
+- **预计到达时间**: 2024-01-18 14:00
+
+虽然您的订单已超过了原先的预计到货时间，但物流目前仍在进行中，并预计将在 2024 年 1 月 18 日下午 2 点到达。请您耐心等待，并注意查看后续物流更新。
+
+如果在预计到达时间后仍未收到货物，您可以再次联系我，我将帮助您进一步处理此事！如有其他问题，请随时告知。
+---------- TextMessage (user_agent) ----------
+谢谢您的帮助，问题已解决!
+
+✅ 场景处理完成
+
+================================================================================
+🎉 企业级多智能体协同演示完成！
+💡 该系统基于 AutoGen 框架，展示了电商客服系统中的多任务协同和跨部门协作
+"""

@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 # 加载环境变量
 load_dotenv()
 
-conn = http.client.HTTPSConnection("api.gpt.ge")
+conn = http.client.HTTPSConnection("aihubmix.com")
 payload = json.dumps({
    "model": "o3-mini",
    "messages": [
@@ -15,7 +15,7 @@ payload = json.dumps({
          "content": "晚上好"
       }
    ],
-   "max_tokens": 1688,
+   #"max_tokens": 1688,
    "temperature": 0.5,
    "stream": False
 })

@@ -5,17 +5,20 @@ from pathlib import Path
 from llama_index.embeddings.dashscope import DashScopeEmbedding,DashScopeTextEmbeddingModels
 from llama_index.core import SimpleDirectoryReader,VectorStoreIndex
 from llama_index.llms.openai_like import OpenAILike
+from dotenv import load_dotenv
 
 # 这两行代码是用于消除 WARNING 警告信息，避免干扰阅读学习，生产环境中建议根据需要来设置日志级别
 import logging
 logging.basicConfig(level=logging.ERROR)
+
+load_dotenv(override=True)
 
 print("正在解析文件...")
 
 # 获取当前脚本的绝对路径
 script_path = Path(__file__).resolve()
 # 获取脚本所在的目录
-script_dir = script_path.parent
+script_dir = script_path.parent.parent
 # 构建docs目录的路径（与脚本同级）
 docs_path = script_dir / "docs"
 
