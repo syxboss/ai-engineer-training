@@ -40,7 +40,7 @@ for model_name in tokenizers:
 
 # OOM OOV
 
-
+# lora修改r*d，其他部分冻结
 #  W   4*4 = 16 
 # delta_w = A * B 
 # r=2 (真实 8)
