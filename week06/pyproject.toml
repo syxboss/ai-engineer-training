@@ -1,0 +1,22 @@
+[project]
+name = "week06"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "pydantic",
+    "vanna",
+    "chromadb",
+    "flask",
+    "pandas",
+    "plotly",
+    "requests",
+    "sqlparse",
+    "dashscope>=1.14.0",
+    "jinja2",
+    "lark>=1.1.7",
+    "typing-extensions>=4.5.0",
+    "langgraph>=0.0.40",
+]

@@ -1,0 +1,45 @@
+start: workflow
+
+workflow: "WORKFLOW" STRING "VERSION" NUMBER (node | edge)+
+
+node: "NODE" ID "TYPE" NODE_TYPE node_data*
+NODE_TYPE: "initial" | "action" | "condition"
+
+node_data: "DO" action
+         | "WHEN" condition  
+         | "DESCRIPTION" STRING
+
+edge: "EDGE" ID "->" ID (edge_condition)?
+edge_condition: "CONDITION" condition
+
+condition: SENSOR_PATH COMP NUMBER UNIT?
+COMP: ">=" | "<"
+
+action: wait_action | start_action | stop_action | turn_on_action | turn_off_action | send_action | alert_action | parameter_action
+
+wait_action: "WAIT" NUMBER UNIT
+start_action: "START" ID
+stop_action: "STOP" ID
+turn_on_action: "TURN_ON" ID
+turn_off_action: "TURN_OFF" ID
+send_action: "SEND" STRING "TO" ID
+alert_action: "ALERT" STRING
+parameter_action: "SET" ID "=" (NUMBER_WITH_UNIT | NUMBER UNIT | STRING)
+
+SENSOR_PATH: /[a-z]+(\.[a-z_]+)+/
+TEMP_VALUE: /\d+(\.\d+)?°C/
+VOLUME_VALUE: /\d+(\.\d+)?ml/
+TIME_VALUE: /\d+(\.\d+)?s/
+NUMBER_WITH_UNIT: TEMP_VALUE | VOLUME_VALUE | TIME_VALUE
+UNIT: /°C/ | /ml/ | /s/
+NUMBER: /-?\d+(\.\d+)?/
+
+ID: /[a-zA-Z_][a-zA-Z0-9_]*/
+STRING: /"[^"]*"/
+
+COMMENT: /#[^\n]*/
+
+%ignore " "
+%ignore "\t"
+%ignore /\r?\n/
+%ignore COMMENT
