@@ -1,0 +1,33 @@
+实践一：使用Lora 微调一个意图识别模型 并部署为 API 
+
+输入输出定义：
+输入：用户自然语言句子（如"我要退票"、"查询余额"）
+输出：对应的意图标签（如"ticket_refund", "account_balance"）
+
+
+执行流程
+1. 训练模型
+python train_intent.py
+该过程需要约22GB GPU显存，可以在ModelScope提供的免费算力A10中运行。
+
+2. (可选) 合并模型
+python merge_model.py
+
+3. 启动API服务
+uvicorn app:app --reload --port 8000
+
+4. 测试API
+curl -X POST "http://localhost:8000/predict" \
+     -H "Content-Type: application/json" \
+     -d '{"text": "我要退票"}'
+
+预期响应：
+{
+  "text": "我要退票",
+  "intent": "ticket_refund",
+  "confidence": 0.95
+}
+
+优化建议
+量化部署：如需降低部署成本，可使用INT8量化版本，将模型占用磁盘空间和GPU显存需求减半。
+LoRA参数调整：根据任务复杂度调整LoRA rank参数（通常4-64），简单意图分类任务r=8-16即可获得良好效果。

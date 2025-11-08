@@ -1,0 +1,23 @@
+[project]
+name = "week03-homework-2"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.117.1",
+    "llama-index>=0.14.3",
+    "llama-index-embeddings-dashscope>=0.4.1",
+    "llama-index-graph-stores-neo4j>=0.5.1",
+    "llama-index-llms-dashscope>=0.5.1",
+    "llama-index-vector-stores-milvus>=0.9.2",
+    "neo4j>=5.28.2",
+    "pandas>=2.2.3",
+    "pymilvus[milvus-lite]>=2.6.2",
+    "python-dotenv>=1.1.1",
+    "uvicorn[standard]>=0.37.0",
+]
+
+[[tool.uv.index]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true

@@ -1,0 +1,27 @@
+{
+  "current_version": "1.0.3",
+  "versions": [
+    {
+      "version": "1.0.1",
+      "backup_name": "backup_1.0.1_20251028_050755",
+      "timestamp": "20251028_050755",
+      "description": "测试备份",
+      "faq_count": 10
+    },
+    {
+      "version": "1.0.2",
+      "backup_name": "backup_1.0.2_20251028_050839",
+      "timestamp": "20251028_050839",
+      "description": "演示备份 - 包含导入的测试数据",
+      "faq_count": 12
+    },
+    {
+      "version": "1.0.3",
+      "backup_name": "backup_1.0.3_20251028_121928",
+      "timestamp": "20251028_121928",
+      "description": "演示备份 - 包含导入的测试数据",
+      "faq_count": 14
+    }
+  ],
+  "created_at": "2025-10-28T05:07:55.061671"
+}

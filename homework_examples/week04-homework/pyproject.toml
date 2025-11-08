@@ -1,0 +1,23 @@
+[project]
+name = "week04-homework"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+	"dashscope>=1.24.6",
+	"dotenv>=0.9.9",
+	"fastapi>=0.117.1",
+	"langchain>=0.3.27",
+	"langchain-community>=0.3.29",
+	"langchain-openai>=0.3.33",
+	"langgraph>=0.6.7",
+	"python-dotenv",
+	# add your dependencies here and run `uv sync` to install them
+	"tavily-python>=0.7.12",
+	"uvicorn[standard]>=0.37.0",
+]
+
+[[tool.uv.index]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true

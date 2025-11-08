@@ -1,0 +1,25 @@
+# CLIP图像搜索系统依赖包
+
+# 核心依赖
+pymilvus>=2.3.0
+pillow>=9.0.0
+torch>=1.12.0
+torchvision>=0.13.0
+
+# CLIP模型 (从GitHub安装)
+# pip install git+https://github.com/openai/CLIP.git
+
+# 图像处理和可视化
+matplotlib>=3.5.0
+numpy>=1.21.0
+
+# 配置和日志
+pyyaml>=6.0
+
+# 可选依赖 (Jupyter环境)
+jupyter>=1.0.0
+ipython>=7.0.0
+
+# 开发依赖 (可选)
+pytest>=7.0.0
+black>=22.0.0

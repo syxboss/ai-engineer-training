@@ -1,0 +1,348 @@
+{
+  "nodes": [
+    {
+      "label": "苹果",
+      "type": "entity",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "id": "7af2a059-6b07-447d-a355-743968295cee",
+      "timestamp": "2025-10-19T02:34:57.922817"
+    },
+    {
+      "label": "水果",
+      "type": "entity",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "id": "868add3c-74e5-4117-99ff-b95dbd37ec53",
+      "timestamp": "2025-10-19T02:34:57.923226"
+    },
+    {
+      "label": "维生素C",
+      "type": "entity",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "id": "63af531f-5002-4758-a6d6-96d4e869d864",
+      "timestamp": "2025-10-19T02:35:01.280741"
+    },
+    {
+      "label": "香蕉",
+      "type": "entity",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "id": "a7888e7e-fa63-4a51-8cae-5c1e87236716",
+      "timestamp": "2025-10-19T02:36:24.136211"
+    },
+    {
+      "label": "钾元素",
+      "type": "entity",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "id": "a1435a19-1c92-4cec-a742-210f4295b909",
+      "timestamp": "2025-10-19T02:36:26.842861"
+    },
+    {
+      "label": "健康食品",
+      "type": "entity",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "id": "eb5c809a-df6e-4909-b03c-343cda617ee0",
+      "timestamp": "2025-10-19T02:36:28.949765"
+    },
+    {
+      "label": "苹果",
+      "type": "水果",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "id": "0cd79a32-0c64-47fe-a2ce-c8fa7419a84c",
+      "timestamp": "2025-10-19T02:42:33.930120"
+    },
+    {
+      "label": "苹果",
+      "type": "水果",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "id": "81c798c9-7fe7-4206-88a8-191d53c5cf61",
+      "timestamp": "2025-10-19T10:48:49.992457"
+    },
+    {
+      "label": "香蕉",
+      "type": "水果",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "id": "ecaeb8cb-506a-4e46-9578-e5140246e307",
+      "timestamp": "2025-10-19T10:49:00.710070"
+    },
+    {
+      "label": "钾",
+      "type": "entity",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "id": "d5df0dfd-f706-42df-b5d4-4ade4b3a39b9",
+      "timestamp": "2025-10-19T10:49:02.873411"
+    },
+    {
+      "label": "苹果",
+      "type": "水果",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "id": "b32f086e-8497-4562-937b-26d34407a23f",
+      "timestamp": "2025-10-19T20:37:03.625289"
+    },
+    {
+      "label": "香蕉",
+      "type": "水果",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "id": "cb97b62f-a9fb-4421-ab8d-109cd9d0ed5f",
+      "timestamp": "2025-10-19T20:37:32.270587"
+    }
+  ],
+  "relations": [
+    {
+      "source_id": "7af2a059-6b07-447d-a355-743968295cee",
+      "target_id": "868add3c-74e5-4117-99ff-b95dbd37ec53",
+      "relation_type": "是",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "weight": 1.0,
+      "id": "b8db9e08-0189-4de4-9063-eb358e4864ac",
+      "timestamp": "2025-10-19T02:34:57.923389"
+    },
+    {
+      "source_id": "7af2a059-6b07-447d-a355-743968295cee",
+      "target_id": "63af531f-5002-4758-a6d6-96d4e869d864",
+      "relation_type": "含有",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {
+        "quantity": "丰富"
+      },
+      "weight": 1.0,
+      "id": "b55ad1af-d16e-479b-8506-8847581f3106",
+      "timestamp": "2025-10-19T02:35:01.281129"
+    },
+    {
+      "source_id": "a7888e7e-fa63-4a51-8cae-5c1e87236716",
+      "target_id": "868add3c-74e5-4117-99ff-b95dbd37ec53",
+      "relation_type": "是",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "weight": 1.0,
+      "id": "d9669f7a-39ae-4586-9075-cc8714c51914",
+      "timestamp": "2025-10-19T02:36:24.136353"
+    },
+    {
+      "source_id": "a7888e7e-fa63-4a51-8cae-5c1e87236716",
+      "target_id": "a1435a19-1c92-4cec-a742-210f4295b909",
+      "relation_type": "富含",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {
+        "quantity": "丰富"
+      },
+      "weight": 1.0,
+      "id": "91ce8361-055a-4df2-aa2e-d3266adb8826",
+      "timestamp": "2025-10-19T02:36:26.843165"
+    },
+    {
+      "source_id": "7af2a059-6b07-447d-a355-743968295cee",
+      "target_id": "eb5c809a-df6e-4909-b03c-343cda617ee0",
+      "relation_type": "属于",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "weight": 1.0,
+      "id": "f51d2c03-a74d-41c3-bc5f-1d5f381dd557",
+      "timestamp": "2025-10-19T02:36:28.950089"
+    },
+    {
+      "source_id": "a7888e7e-fa63-4a51-8cae-5c1e87236716",
+      "target_id": "eb5c809a-df6e-4909-b03c-343cda617ee0",
+      "relation_type": "属于",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "weight": 1.0,
+      "id": "33523cf6-2c00-418e-881c-fbc6521b48fc",
+      "timestamp": "2025-10-19T02:36:31.506486"
+    },
+    {
+      "source_id": "7af2a059-6b07-447d-a355-743968295cee",
+      "target_id": "63af531f-5002-4758-a6d6-96d4e869d864",
+      "relation_type": "含有",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "weight": 1.0,
+      "id": "744b8450-078f-4eca-86a0-f9c973d81351",
+      "timestamp": "2025-10-19T02:42:36.610492"
+    },
+    {
+      "source_id": "81c798c9-7fe7-4206-88a8-191d53c5cf61",
+      "target_id": "63af531f-5002-4758-a6d6-96d4e869d864",
+      "relation_type": "含有",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "weight": 1.0,
+      "id": "61e36780-b381-4802-9a82-b4a99e99e036",
+      "timestamp": "2025-10-19T10:48:52.085027"
+    },
+    {
+      "source_id": "a7888e7e-fa63-4a51-8cae-5c1e87236716",
+      "target_id": "d5df0dfd-f706-42df-b5d4-4ade4b3a39b9",
+      "relation_type": "含有",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "weight": 1.0,
+      "id": "59af27bd-356d-4ca3-a881-96a42d30f0a2",
+      "timestamp": "2025-10-19T10:49:02.873411"
+    },
+    {
+      "source_id": "81c798c9-7fe7-4206-88a8-191d53c5cf61",
+      "target_id": "eb5c809a-df6e-4909-b03c-343cda617ee0",
+      "relation_type": "属于",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "weight": 1.0,
+      "id": "130978aa-2654-4519-8c0c-688e49ec91af",
+      "timestamp": "2025-10-19T10:49:05.391929"
+    },
+    {
+      "source_id": "a7888e7e-fa63-4a51-8cae-5c1e87236716",
+      "target_id": "eb5c809a-df6e-4909-b03c-343cda617ee0",
+      "relation_type": "属于",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "weight": 1.0,
+      "id": "6cda1063-3a0c-48a7-9498-386fcdc30d83",
+      "timestamp": "2025-10-19T10:49:08.988897"
+    },
+    {
+      "source_id": "81c798c9-7fe7-4206-88a8-191d53c5cf61",
+      "target_id": "eb5c809a-df6e-4909-b03c-343cda617ee0",
+      "relation_type": "属于",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "weight": 1.0,
+      "id": "73543a43-079c-4165-b80d-3555db1fdde6",
+      "timestamp": "2025-10-19T20:37:34.902035"
+    },
+    {
+      "source_id": "ecaeb8cb-506a-4e46-9578-e5140246e307",
+      "target_id": "eb5c809a-df6e-4909-b03c-343cda617ee0",
+      "relation_type": "属于",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "weight": 1.0,
+      "id": "0b0eb3f9-af48-4e83-8a40-3219a74a695c",
+      "timestamp": "2025-10-19T20:37:37.375783"
+    }
+  ],
+  "triples": [
+    {
+      "subject": "苹果",
+      "predicate": "是",
+      "object": "水果",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "confidence": 1.0,
+      "timestamp": "2025-10-19T02:34:57.922766"
+    },
+    {
+      "subject": "苹果",
+      "predicate": "含有",
+      "object": "维生素C",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {
+        "quantity": "丰富"
+      },
+      "confidence": 1.0,
+      "timestamp": "2025-10-19T02:35:01.280671"
+    },
+    {
+      "subject": "香蕉",
+      "predicate": "是",
+      "object": "水果",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "confidence": 1.0,
+      "timestamp": "2025-10-19T02:36:24.136189"
+    },
+    {
+      "subject": "香蕉",
+      "predicate": "富含",
+      "object": "钾元素",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {
+        "quantity": "丰富"
+      },
+      "confidence": 1.0,
+      "timestamp": "2025-10-19T02:36:26.842802"
+    },
+    {
+      "subject": "苹果",
+      "predicate": "属于",
+      "object": "健康食品",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "confidence": 1.0,
+      "timestamp": "2025-10-19T02:36:28.949717"
+    },
+    {
+      "subject": "香蕉",
+      "predicate": "属于",
+      "object": "健康食品",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "confidence": 1.0,
+      "timestamp": "2025-10-19T02:36:31.506432"
+    },
+    {
+      "subject": "苹果",
+      "predicate": "含有",
+      "object": "维生素C",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "confidence": 1.0,
+      "timestamp": "2025-10-19T02:42:36.610396"
+    },
+    {
+      "subject": "苹果",
+      "predicate": "含有",
+      "object": "维生素C",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "confidence": 1.0,
+      "timestamp": "2025-10-19T10:48:52.085027"
+    },
+    {
+      "subject": "香蕉",
+      "predicate": "含有",
+      "object": "钾",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "confidence": 1.0,
+      "timestamp": "2025-10-19T10:49:02.873411"
+    },
+    {
+      "subject": "苹果",
+      "predicate": "属于",
+      "object": "健康食品",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "confidence": 1.0,
+      "timestamp": "2025-10-19T10:49:05.391929"
+    },
+    {
+      "subject": "香蕉",
+      "predicate": "属于",
+      "object": "健康食品",
+      "user_id": "knowledge-demo-user-1",
+      "properties": {},
+      "confidence": 1.0,
+      "timestamp": "2025-10-19T10:49:08.988897"
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "timestamp": "2025-10-19T20:38:45.530396",
+    "nodes": 12,
+    "relations": 13,
+    "triples": 11
+  }
+}
