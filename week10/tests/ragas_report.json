@@ -1,0 +1,241 @@
+{
+  "timestamp": "2025-11-19T22:05:40.211523",
+  "summary": {
+    "thresholds": {
+      "faithfulness": 0.69,
+      "answer_relevancy": 0.59
+    },
+    "pass": 2,
+    "fail": 1,
+    "total": 3,
+    "avg_faithfulness": 0.8095238095238094,
+    "avg_answer_relevancy": 0.7060854448797308,
+    "avg_precision_at_k": 1.0,
+    "avg_recall_at_k": 1.0,
+    "elapsed_sec": 120.823
+  },
+  "cases": [
+    {
+      "case": "课程相关",
+      "query": "AI会不会替代程序员？",
+      "route": "direct",
+      "answer_preview": "AI可能会辅助程序员，提高效率，但短期内不会完全替代程序员。程序员需要的创造力、逻辑思维和问题解决能力仍是AI难以取代的。",
+      "contexts_count": 2,
+      "faiss_results": {
+        "query": [
+          {
+            "doc_id": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt",
+            "score": null,
+            "metadata": {
+              "source": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt"
+            },
+            "text_len": 83,
+            "snippet": "31. **Q：AI会不会替代程序员？**  \n    A：不会完全替代，但会极大提升效率。我们的课程重点是“AI for Developer”，教会程序员驾驭AI。"
+          },
+          {
+            "doc_id": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt",
+            "score": null,
+            "metadata": {
+              "source": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt"
+            },
+            "text_len": 63,
+            "snippet": "76. **Q：AI会不会让团队变懒？**  \n    A：合理使用可释放创造力。关键是建立“AI辅助+人工主导”的协作文化。"
+          }
+        ],
+        "ground_truth": [
+          {
+            "doc_id": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt",
+            "score": null,
+            "metadata": {
+              "source": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt"
+            },
+            "text_len": 83,
+            "snippet": "31. **Q：AI会不会替代程序员？**  \n    A：不会完全替代，但会极大提升效率。我们的课程重点是“AI for Developer”，教会程序员驾驭AI。"
+          },
+          {
+            "doc_id": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt",
+            "score": null,
+            "metadata": {
+              "source": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt"
+            },
+            "text_len": 68,
+            "snippet": "99. **Q：个人开发者适合学吗？**  \n    A：非常适合。课程内容可用于打造AI SaaS产品或接外包项目，已有学员成功创业。"
+          }
+        ]
+      },
+      "vector_comparison": {
+        "query_ground_truth_cosine": 0.6924903626443338,
+        "threshold": 0.7,
+        "doc_to_ground_truth": [
+          {
+            "doc_id": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt",
+            "cosine": 0.8539092430264358,
+            "above_threshold": true
+          },
+          {
+            "doc_id": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt",
+            "cosine": 0.5934600065742908,
+            "above_threshold": false
+          }
+        ]
+      },
+      "evaluation_metrics": {
+        "faithfulness": 0.42857142857142855,
+        "answer_relevancy": 0.7741839573455856,
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0
+      },
+      "problem_description": "忠实度偏低，可能未严格依据检索上下文作答",
+      "passed": false
+    },
+    {
+      "case": "售前咨询",
+      "query": "售前咨询：课程适合新人吗？",
+      "route": "course",
+      "answer_preview": "根据提供的资料，课程不适合零基础学员参加，建议有编程经验的开发者和架构师报名。",
+      "contexts_count": 2,
+      "faiss_results": {
+        "query": [
+          {
+            "doc_id": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt",
+            "score": null,
+            "metadata": {
+              "source": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt"
+            },
+            "text_len": 68,
+            "snippet": "99. **Q：个人开发者适合学吗？**  \n    A：非常适合。课程内容可用于打造AI SaaS产品或接外包项目，已有学员成功创业。"
+          },
+          {
+            "doc_id": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt",
+            "score": null,
+            "metadata": {
+              "source": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt"
+            },
+            "text_len": 89,
+            "snippet": "1. **Q：这门课是给谁上的？适合零基础吗？**  \n   A：本课程面向有编程经验的开发者和架构师，不建议零基础学员参加。我们假设学员已掌握Python及基本Web开发能力。"
+          }
+        ],
+        "ground_truth": [
+          {
+            "doc_id": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt",
+            "score": null,
+            "metadata": {
+              "source": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt"
+            },
+            "text_len": 63,
+            "snippet": "3. **Q：新入职的应届生能听懂吗？**  \n   A：建议有一定项目经验后再学习。我们会提供前置自学资料包，帮助补足基础。"
+          },
+          {
+            "doc_id": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt",
+            "score": null,
+            "metadata": {
+              "source": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt"
+            },
+            "text_len": 68,
+            "snippet": "99. **Q：个人开发者适合学吗？**  \n    A：非常适合。课程内容可用于打造AI SaaS产品或接外包项目，已有学员成功创业。"
+          }
+        ]
+      },
+      "vector_comparison": {
+        "query_ground_truth_cosine": 0.679455723469986,
+        "threshold": 0.7,
+        "doc_to_ground_truth": [
+          {
+            "doc_id": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt",
+            "cosine": 0.6586946165865918,
+            "above_threshold": false
+          },
+          {
+            "doc_id": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt",
+            "cosine": 0.6319173159458641,
+            "above_threshold": false
+          }
+        ]
+      },
+      "evaluation_metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.6005106841211348,
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0
+      },
+      "problem_description": "无明显问题",
+      "passed": true
+    },
+    {
+      "case": "售后服务",
+      "query": "售后服务：课后答疑支持有哪些？",
+      "route": "course",
+      "answer_preview": "课后答疑支持包括专属微信群和GitHub Discussion区，讲师每周集中答疑两次，问题归档为知识库供检索。",
+      "contexts_count": 2,
+      "faiss_results": {
+        "query": [
+          {
+            "doc_id": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt",
+            "score": null,
+            "metadata": {
+              "source": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt"
+            },
+            "text_len": 80,
+            "snippet": "9. **Q：课程有没有社区或答疑支持？**  \n   A：提供专属微信群+GitHub Discussion区，讲师每周集中答疑两次，问题归档为知识库供检索。"
+          },
+          {
+            "doc_id": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt",
+            "score": null,
+            "metadata": {
+              "source": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt"
+            },
+            "text_len": 55,
+            "snippet": "93. **Q：退款政策是怎样的？**  \n    A：开课一周内可无理由退款，之后按已完成课时比例扣除费用。"
+          }
+        ],
+        "ground_truth": [
+          {
+            "doc_id": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt",
+            "score": null,
+            "metadata": {
+              "source": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt"
+            },
+            "text_len": 80,
+            "snippet": "9. **Q：课程有没有社区或答疑支持？**  \n   A：提供专属微信群+GitHub Discussion区，讲师每周集中答疑两次，问题归档为知识库供检索。"
+          },
+          {
+            "doc_id": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt",
+            "score": null,
+            "metadata": {
+              "source": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt"
+            },
+            "text_len": 74,
+            "snippet": "82. **Q：有没有前置学习资料？**  \n    A：提供Python进阶、HTTP协议、向量基础、Prompt Engineering入门包。"
+          }
+        ]
+      },
+      "vector_comparison": {
+        "query_ground_truth_cosine": 0.653787923017595,
+        "threshold": 0.7,
+        "doc_to_ground_truth": [
+          {
+            "doc_id": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt",
+            "cosine": 0.8416130231579445,
+            "above_threshold": true
+          },
+          {
+            "doc_id": "D:\\AI工程化训练营\\workspace\\week10\\work\\datas\\data.txt",
+            "cosine": 0.5351154774065237,
+            "above_threshold": false
+          }
+        ]
+      },
+      "evaluation_metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.743561693172472,
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0
+      },
+      "problem_description": "无明显问题",
+      "passed": true
+    }
+  ],
+  "validation": {
+    "required_fields_present_all_cases": true
+  }
+}
